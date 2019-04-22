@@ -1,9 +1,10 @@
 let socket={
 	io:'',
 	id:'',
-	init(io){
+	init(io,callback){
 		this.io=io
 		this.join()
+		callback(this.io)
 	},
 	join(){
 		this.io.on('banner',(msg)=>{
