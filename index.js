@@ -15,7 +15,7 @@ io.on('connection', function(socket){
 		console.log('新用户'+msg+'先出了爱心')
 		usrs.push(socket.id)
 		usr_name[socket.id]=msg
-		banner_socket.post(msg)
+		banner_socket.post(banner_socket,msg)
 	})
 	
 
