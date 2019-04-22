@@ -1,7 +1,9 @@
 let socket={
-	io:null,
+	io:'',
 	id:'',
 	init(io){
+		if(this.io)
+			return
 		this.io=io
 		this.join()
 	},
