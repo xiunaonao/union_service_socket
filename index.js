@@ -15,7 +15,6 @@ io.on('connection', function(socket){
 
 
 	socket.on('banner',(msg)=>{
-		console.log('???')
 		banner_socket=socket
 	})
 
