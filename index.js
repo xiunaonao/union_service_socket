@@ -1,24 +1,29 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-let banner=require('./banner')
 let banner_socket
 let usrs=[]
 let usr_name={}
 io.on('connection', function(socket){
-	banner.init(socket,(soc)=>{
-		if(!banner_socket)
-			banner_socket=soc
-		else{
-			console.log('已经获得,id:'+banner_socket.id)
-		}
+	// banner.init(socket,(soc)=>{
+	// 	if(!banner_socket)
+	// 		banner_socket=soc
+	// 	else{
+	// 		console.log('已经获得,id:'+banner_socket.id)
+	// 	}
+	// })
+
+
+	io.on('banner',(msg)=>{
+		banner_socket=io
 	})
 
 	socket.on('new_user',(msg)=>{
 		console.log('新用户'+msg+'先出了爱心')
 		usrs.push(socket.id)
 		usr_name[socket.id]=msg
-		banner.post(banner_socket,msg)
+		//banner.post(banner_socket,msg)
+		banner_socket.emit('user',msg)
 	})
 	
 

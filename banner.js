@@ -4,7 +4,7 @@ let socket={
 	},
 	join(io,callback){
 		io.on('banner',(msg)=>{
-			console.log('大屏幕已加入'+io.id)
+			//console.log('大屏幕已加入'+io.id)
 			//this.id=this.io.id
 
 			callback(io)
