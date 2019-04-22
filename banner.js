@@ -1,15 +1,13 @@
 let socket={
-	io:'',
-	id:'',
 	init(io,callback){
-		this.io=io
-		this.join()
-		callback(this.io)
+		this.join(io,callback)
 	},
-	join(){
-		this.io.on('banner',(msg)=>{
-			console.log('大屏幕已加入'+this.io.id)
-			this.id=this.io.id
+	join(io,callback){
+		io.on('banner',(msg)=>{
+			console.log('大屏幕已加入'+io.id)
+			//this.id=this.io.id
+
+			callback(io)
 			//this.io.emit()
 		})
 
