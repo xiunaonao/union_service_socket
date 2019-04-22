@@ -7,7 +7,7 @@ let socket={
 	},
 	join(){
 		this.io.on('banner',(msg)=>{
-			consoe.log('大屏幕已加入')
+			console.log('大屏幕已加入')
 			this.id=this.io.id
 			//this.io.emit()
 		})
