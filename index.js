@@ -23,7 +23,8 @@ io.on('connection', function(socket){
 		usrs.push(socket.id)
 		usr_name[socket.id]=msg
 		//banner.post(banner_socket,msg)
-		banner_socket.emit('user',msg)
+		if(banner_socket)
+			banner_socket.emit('user',msg)
 	})
 	
 
