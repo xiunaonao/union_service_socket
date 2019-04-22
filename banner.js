@@ -2,13 +2,12 @@ let socket={
 	io:'',
 	id:'',
 	init(io){
-		if(this.io)
-			return
 		this.io=io
 		this.join()
 	},
 	join(){
 		this.io.on('banner',(msg)=>{
+			consoe.log('大屏幕已加入')
 			this.id=this.io.id
 			//this.io.emit()
 		})
