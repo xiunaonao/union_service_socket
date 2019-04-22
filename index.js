@@ -14,9 +14,9 @@ io.on('connection', function(socket){
 	// })
 
 
-	io.on('banner',(msg)=>{
+	socket.on('banner',(msg)=>{
 		console.log('???')
-		banner_socket=io
+		banner_socket=socket
 	})
 
 	socket.on('new_user',(msg)=>{
