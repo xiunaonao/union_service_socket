@@ -15,7 +15,7 @@ let socket={
 
 	},
 	post(io,name){
-		console.log('大屏幕'+this.io.id+'回复')
+		console.log('大屏幕'+io.id+'回复')
 		io.emit('user',name)
 	},
 	

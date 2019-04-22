@@ -9,6 +9,9 @@ io.on('connection', function(socket){
 	banner.init(socket,(soc)=>{
 		if(!banner_socket)
 			banner_socket=soc
+		else{
+			console.log('已经获得,id:'+banner_socket.id)
+		}
 	})
 
 	socket.on('new_user',(msg)=>{
