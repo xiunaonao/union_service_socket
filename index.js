@@ -28,6 +28,7 @@ io.on('connection', function(socket){
 	})
 	
 	socket.on('beginn',(msg)=>{
+		console.log('募捐正式开始')
 		if(banner_socket)
 			banner_socket.emit('begin',msg)
 	})
