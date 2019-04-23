@@ -19,7 +19,7 @@ io.on('connection', function(socket){
 	})
 
 	socket.on('new_user',(msg)=>{
-		console.log('新用户'+msg+'先出了爱心')
+		console.log('新用户'+msg+'献出了爱心')
 		usrs.push(socket.id)
 		usr_name[socket.id]=msg
 		//banner.post(banner_socket,msg)
@@ -27,7 +27,10 @@ io.on('connection', function(socket){
 			banner_socket.emit('user',msg)
 	})
 	
-
+	socket.on('beginn',(msg)=>{
+		if(banner_socket)
+			banner_socket.emit('begin',msg)
+	})
 
 
 });
