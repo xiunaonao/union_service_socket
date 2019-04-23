@@ -15,6 +15,7 @@ io.on('connection', function(socket){
 
 
 	socket.on('banner',(msg)=>{
+		console.log('大屏幕启动')
 		banner_socket=socket
 	})
 
